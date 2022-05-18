@@ -1,0 +1,35 @@
+.myProjectCard {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.myProjectCard-light {
+  background-color: rgb(255,255,255);
+  border: 1px dashed rgb(0,0,0);
+}
+  
+.myProjectCard-light > h2 {
+  color: rgb(255,0,0);
+}
+
+.myProjectCard-light > p {
+  color: rgb(150,100,100);
+}
+
+.myProjectCard-dark {
+  background-color: rgb(0,0,0);
+  border: 1px dashed rgb(255,255,255);
+}
+
+.myProjectCard-dark > h2 {
+  color: rgb(0,255,0);
+}
+
+.myProjectCard-dark > p {
+  color: rgb(100,150,100);
+}
