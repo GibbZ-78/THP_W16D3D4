@@ -12,11 +12,13 @@ function Header() {
   const [myHeaderModeSwitchButton, setHeaderModeSwitchButton] = useState(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
   const [myHeaderModeSwitchImage, setHeaderModeSwitchImage] = useState(myHeaderMode === "light" ? MoonImg : SunImg);
   console.log("Initialized Header state vars...");
-  console.log("  > Initial mode :" + myHeaderMode);
-  console.log("  > Initial 'contrary' mode :" + myContraryMode);
+  console.log("  > Initial mode: " + myHeaderMode);
+  console.log("  > Initial 'contrary' mode: " + myContraryMode);
 
   const SwitchMode = () => {
     console.log("Switch mode button pressed...");
+    console.log("  > Current mode: " + myHeaderMode);
+    console.log("  > Current 'contrary' mode: " + myContraryMode);
     setHeaderMode(myContraryMode);
     setContraryMode(myHeaderMode === "light" ? "dark" : "light");
     setHeaderClassMode(`myHeader myHeader-${myHeaderMode}`);
