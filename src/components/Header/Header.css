@@ -44,6 +44,7 @@
   border-radius: 3px;
   padding: 10px;
   margin: 5px;
+  border: 1px dashed rgb(100,100,100);
 } 
 
 .myModeSwitchButton-light {
@@ -53,17 +54,17 @@
 }
 
 .myModeSwitchButton-light:hover {
-  background-color: rgb(0,0,0);
+  background-color: rgb(50,50,50);
   color: rgb(255,255,255);
   box-shadow: 10px 10px 15px 0px rgb(150, 150, 150);
-  border: 1px dashed rgb(100,100,100);
+  border: 1px solid rgb(100,100,100);
 }
 
 .myModeSwitchButton-light:active {
   background-color: rgb(0,0,0);
   color: rgb(255,255,255);
   box-shadow: none;
-  border: 1px dashed rgb(100,100,100);
+  border: 1px solid rgb(100,100,100);
   position: relative;
   top: 1px;
 }
@@ -75,17 +76,17 @@
 }
 
 .myModeSwitchButton-dark:hover {
-  background-color: rgb(255,255,255);
+  background-color: rgb(200,200,200);
   color: rgb(0,0,0);
   box-shadow: 10px 10px 15px 0px rgb(50, 50, 50);
-  border: 1px dashed rgb(100,100,100);
+  border: 1px solid rgb(100,100,100);
 }
 
 .myModeSwitchButton-dark:active {
   background-color: rgb(255,255,255);
   color: rgb(0,0,0);
   box-shadow: none;
-  border: 1px dashed rgb(100,100,100);
+  border: 1px solid rgb(100,100,100);
   position: relative;
   top: 1px;
 }
