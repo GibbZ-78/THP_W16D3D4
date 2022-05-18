@@ -7,7 +7,7 @@ import './StudyCase.css';
 function StudyCase() {
 
   const myStudyCaseMode = "light";  // To be modified using CONTEXT
-  const myStudyCaseClassMode = `myStudyCase myStudyCase-${myProjectCardMode}`;
+  const myStudyCaseClassMode = `myStudyCase myStudyCase-${myStudyCaseMode}`;
   const myContraryMode = myStudyCaseMode === "light" ? "dark" : "light";
 
   const { myProjectPath } = useParams();
