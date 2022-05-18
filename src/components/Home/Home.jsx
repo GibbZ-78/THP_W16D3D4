@@ -4,7 +4,6 @@ function Home() {
 
   const myHomeMode = "light";  // To be modified using CONTEXT
   const myHomeClassMode = `myHome myHome-${myHomeMode}`;
-  const myContraryMode = myHomeMode === "light" ? "dark" : "light";
 
   return (
     <section className={myHomeClassMode}>

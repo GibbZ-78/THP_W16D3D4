@@ -5,7 +5,6 @@ function ProjectCard(props) {
 
   const myProjectCardMode = "light";  // To be modified using CONTEXT
   const myProjectCardClassMode = `myProjectCard myProjectCard-${myProjectCardMode}`;
-  const myContraryMode = myProjectCardMode === "light" ? "dark" : "light";
 
   if (props.project) {
     return (

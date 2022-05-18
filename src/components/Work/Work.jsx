@@ -11,7 +11,6 @@ function Work() {
 
   const myWorkMode = "light";  // To be modified using CONTEXT
   const myWorkClassMode = `myWork myWork-${myWorkMode}`;
-  const myContraryMode = myWorkMode === "light" ? "dark" : "light";
   const myProjectCardContainerMode = "light";  // To be modified using CONTEXT
   const myProjectCardContainerClassMode = `myProjectCardContainer myProjectCardContainer-${myProjectCardContainerMode}`;
   const myProjectContainerMode = "light";  // To be modified using CONTEXT

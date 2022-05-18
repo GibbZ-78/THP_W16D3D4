@@ -6,9 +6,8 @@ import './CaseStudy.css';
 
 function CaseStudy() {
 
-  const myCaseStudyMode = "light";  // To be modified using CONTEXT
+  const myCaseStudyMode = "dark";  // To be modified using CONTEXT
   const myCaseStudyClassMode = `myCaseStudy myCaseStudy-${myCaseStudyMode}`;
-  const myContraryMode = myCaseStudyMode === "light" ? "dark" : "light";
 
   const { myProjectPath } = useParams();
   const [displayProject, setProjectToDisplay] = useState("")
