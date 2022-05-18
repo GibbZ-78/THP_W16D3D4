@@ -7,10 +7,14 @@ import './Header.css';
 function Header() {
 
   const [myHeaderMode, setHeaderMode] = useState("light");
-  const [myContraryMode, setContraryMode] = useState("dark");
-  const [myHeaderClassMode, setHeaderClassMode] = useState(`myHeader myHeader-${myHeaderMode}`);
-  const [myHeaderModeSwitchButton, setHeaderModeSwitchButton] = useState(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
-  const [myHeaderModeSwitchImage, setHeaderModeSwitchImage] = useState(myHeaderMode === "light" ? MoonImg : SunImg);
+  // const [myContraryMode, setContraryMode] = useState("dark");
+  // const [myHeaderClassMode, setHeaderClassMode] = useState(`myHeader myHeader-${myHeaderMode}`);
+  // const [myHeaderModeSwitchButton, setHeaderModeSwitchButton] = useState(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
+  // const [myHeaderModeSwitchImage, setHeaderModeSwitchImage] = useState(myHeaderMode === "light" ? MoonImg : SunImg);
+  let myContraryMode = myHeaderMode === "light" ? "dark" : "light";
+  let myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
+  let myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
+  let myHeaderModeSwitchImage = myHeaderMode === "light" ? MoonImg : SunImg;
   console.log("Initialized Header state vars...");
   console.log("  > Initial mode: " + myHeaderMode);
   console.log("  > Initial 'contrary' mode: " + myContraryMode);
@@ -20,10 +24,14 @@ function Header() {
     console.log("  > Current mode: " + myHeaderMode);
     console.log("  > Current 'contrary' mode: " + myContraryMode);
     setHeaderMode(myHeaderMode === "light" ? "dark" : "light");
-    setContraryMode(myContraryMode === "light" ? "dark" : "light");
-    setHeaderClassMode(`myHeader myHeader-${myHeaderMode}`);
-    setHeaderModeSwitchButton(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
-    setHeaderModeSwitchImage(myHeaderMode === "light" ? MoonImg : SunImg);
+    // setContraryMode(myContraryMode === "light" ? "dark" : "light");
+    // setHeaderClassMode(`myHeader myHeader-${myHeaderMode}`);
+    // setHeaderModeSwitchButton(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
+    // setHeaderModeSwitchImage(myHeaderMode === "light" ? MoonImg : SunImg);
+    myContraryMode = myHeaderMode === "light" ? "dark" : "light";
+    myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
+    myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
+    myHeaderModeSwitchImage = myHeaderMode === "light" ? MoonImg : SunImg;
     console.log("  > New mode: " + myHeaderMode);
     console.log("  > New 'contrary' mode: " + myContraryMode);
     console.log("  > New header style: " + myHeaderClassMode);
