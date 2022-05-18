@@ -10,19 +10,23 @@ function CaseStudy() {
   const myCaseStudyClassMode = `myCaseStudy myCaseStudy-${myCaseStudyMode}`;
 
   const { myProjectPath } = useParams();
-  const [displayProject, setProjectToDisplay] = useState("")
+  const [displayProject, setProjectToDisplay] = useState(undefined)
 
   console.log("Mounting 'CaseStudy' component");
   console.log(myProjectPath);
 
+  // Seeking the project with the ID built in the URI...
   const findProject = () => {
     const myProjectSearch = myProjectTab.find((myProject) => myProject.id === myProjectPath.split('-')[1]);
     setProjectToDisplay(myProjectSearch);
   }
 
-  useEffect(findProject , [myProjectPath]);
+  // ... each time the CaseStudy component is rendered / updated
+  useEffect(findProject, [myProjectPath]);
 
-  if (displayProject !== "") {
+  // If the 'displayProject' state var is not 'undefined' (i.e. not just initialized via 'useState' or inducing a vain search via 'find')
+  // Then display the content of the related project information within 'CaseStudy', the lowest component in the 'Work' page
+  if (displayProject !== undefined) {
     return(
       <div className={myCaseStudyClassMode}>
         <h2>{displayProject.name} (ID: {displayProject.id})</h2>

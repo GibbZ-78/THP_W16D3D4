@@ -13,8 +13,11 @@ function Header() {
   let myContraryMode = myHeaderMode === "light" ? "dark" : "light";
 
   const SwitchMode = () => {
+    console.log("Switch mode button pressed...");
     myHeaderMode = myContraryMode;
+    console.log("New mode :" + myHeaderMode);
     myContraryMode = myHeaderMode === "light" ? "dark" : "light";
+    console.log("New 'contrary' mode :" + myContraryMode);
   };
 
   return (
