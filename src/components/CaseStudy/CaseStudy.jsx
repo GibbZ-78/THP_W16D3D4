@@ -13,6 +13,9 @@ function CaseStudy() {
   const { myProjectPath } = useParams();
   const [displayProject, setProjectToDisplay] = useState("")
 
+  console.log("Mounting 'CaseStudy' component");
+  console.log(myProjectPath);
+
   const findProject = () => {
     const myProjectSearch = myProjectTab.find((myProject) => myProject.id === myProjectPath.split('-')[1]);
     setProjectToDisplay(myProjectSearch);

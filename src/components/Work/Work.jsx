@@ -7,6 +7,8 @@ import "./Work.css";
 
 function Work() {
 
+  console.log("Mounting 'Work' component");
+
   const myWorkMode = "light";  // To be modified using CONTEXT
   const myWorkClassMode = `myWork myWork-${myWorkMode}`;
   const myContraryMode = myWorkMode === "light" ? "dark" : "light";
@@ -33,7 +35,7 @@ function Work() {
       </div>
       <div className={myProjectContainerClassMode}>
         <Routes>
-          <Route path='/works/:myProjectPath' element={<CaseStudy/>} />
+          <Route path='/:myProjectPath' element={<CaseStudy/>} />
         </Routes>
       </div>
     </section>

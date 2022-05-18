@@ -6,13 +6,13 @@
 }
 
 .myHeader-light {
-  background-color: rgb(255,255,255);
-  color: rgb(0,0,0);
+  background-color: rgb(200,200,200);
+  color: rgb(50,50,50);
 }
   
 .myHeader-dark {
-  background-color: rgb(0,0,0);
-  color: rgb(255,255,255);
+  background-color: rgb(50,50,50);
+  color: rgb(200,200,200);
 }
 
 .myHeaderLogo {

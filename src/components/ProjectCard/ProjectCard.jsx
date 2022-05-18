@@ -9,7 +9,7 @@ function ProjectCard(props) {
 
   if (props.project) {
     return (
-      <Link to={'/works/project-'+ props.project.id.toString()}>
+      <Link to={'/works/project-'+ props.project.id}>
         <div className={myProjectCardClassMode}>
           <h2>{props.project.name}</h2>
           <p>Project ID: {props.project.id}</p>
