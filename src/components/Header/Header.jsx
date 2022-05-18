@@ -6,18 +6,27 @@ import './Header.css';
 
 function Header() {
 
-  let myHeaderMode = "light";
-  let myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
-  let myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
-  let myHeaderModeSwitchImage = myHeaderMode === "light" ? SunsetImg : SunriseImg;
-  let myContraryMode = myHeaderMode === "light" ? "dark" : "light";
+  const [myHeaderMode, setHeaderMode] = useState("light");
+  const [myContraryMode, setContraryMode] = useState(myHeaderMode === "light" ? "dark" : "light");
+  const [myHeaderClassMode, setHeaderClassMode] = useState(`myHeader myHeader-${myHeaderMode}`);
+  const [myHeaderModeSwitchButton, setHeaderModeSwitchButton] = useState(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
+  const [myHeaderModeSwitchImage, setHeaderModeSwitchImage] = useState(myHeaderMode === "light" ? SunsetImg : SunriseImg);
+  console.log("Initialized Header state vars...");
+  console.log("  > Initial mode :" + myHeaderMode);
+  console.log("  > Initial 'contrary' mode :" + myContraryMode);
 
   const SwitchMode = () => {
     console.log("Switch mode button pressed...");
-    myHeaderMode = myContraryMode;
-    console.log("New mode :" + myHeaderMode);
-    myContraryMode = myHeaderMode === "light" ? "dark" : "light";
-    console.log("New 'contrary' mode :" + myContraryMode);
+    setHeaderMode(myContraryMode);
+    setContraryMode(myHeaderMode === "light" ? "dark" : "light");
+    setHeaderClassMode(`myHeader myHeader-${myHeaderMode}`);
+    setHeaderModeSwitchButton(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
+    setHeaderModeSwitchImage(myHeaderMode === "light" ? SunsetImg : SunriseImg);
+    console.log("  > New mode: " + myHeaderMode);
+    console.log("  > New 'contrary' mode: " + myContraryMode);
+    console.log("  > New header style: " + myHeaderClassMode);
+    console.log("  > New button style: " + myHeaderModeSwitchButton);
+    console.log("  > New button icon: " + myHeaderModeSwitchImage)
   };
 
   return (
@@ -32,9 +41,9 @@ function Header() {
       </div>
       <div>
         <button className={myHeaderModeSwitchButton} onClick={SwitchMode}>
-          <img src={myHeaderModeSwitchImage}></img>
+          <img src={myHeaderModeSwitchImage} alt={`icon figuring the alternate color mode: ${myContraryMode}`} />
           &nbsp;Switch to {myContraryMode} mode&nbsp;
-          <img src={myHeaderModeSwitchImage}></img>
+          <img src={myHeaderModeSwitchImage} alt={`icon figuring the alternate color mode: ${myContraryMode}`} />
         </button>
       </div> 
     </header>
