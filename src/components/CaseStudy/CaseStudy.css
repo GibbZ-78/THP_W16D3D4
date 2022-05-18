@@ -1,4 +1,4 @@
-.myStudyCase {
+.myCaseStudy {
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -8,28 +8,28 @@
   border-radius: 5px;
 }
 
-.myStudyCase-light {
+.myCaseStudy-light {
   background-color: rgb(255,255,255);
   color: rgb(0,0,0);
 }
 
-.myStudyCase-light > h2 {
+.myCaseStudy-light > h2 {
   color: rgb(255,0,0);
 }
 
-.myStudyCase-light > p {
+.myCaseStudy-light > p {
   color: rgb(255,100,100);
 }
 
-.myStudyCase-dark {
+.myCaseStudy-dark {
   background-color: rgb(0,0,0);
   color: rgb(255,255,255);
 }
 
-.myStudyCase-dark > h2 {
+.myCaseStudy-dark > h2 {
     color: rgb(0,255,0);
 }
 
-.myStudyCase-dark > p {
+.myCaseStudy-dark > p {
   color: rgb(100,255,100);
 }

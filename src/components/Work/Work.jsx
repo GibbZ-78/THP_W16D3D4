@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import myProjectTab from '../../assets/contents/Projects';
 import ProjectCard from '../ProjectCard/ProjectCard';
-import StudyCase from '../StudyCase/StudyCase';
+import CaseStudy from '../CaseStudy/CaseStudy';
 import "./Work.css";
 
 function Work() {
@@ -32,7 +32,9 @@ function Work() {
         ))}
       </div>
       <div className={myProjectContainerClassMode}>
-        <Route path='/:myProjectPath' element={<StudyCase/>} />
+        <Routes>
+          <Route path='/works/:myProjectPath' element={<CaseStudy/>} />
+        </Routes>
       </div>
     </section>
   );

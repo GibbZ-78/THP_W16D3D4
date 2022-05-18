@@ -2,19 +2,19 @@ import React from "react";
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import myProjectTab from '../../assets/contents/Projects';
-import './StudyCase.css';
+import './CaseStudy.css';
 
-function StudyCase() {
+function CaseStudy() {
 
-  const myStudyCaseMode = "light";  // To be modified using CONTEXT
-  const myStudyCaseClassMode = `myStudyCase myStudyCase-${myStudyCaseMode}`;
-  const myContraryMode = myStudyCaseMode === "light" ? "dark" : "light";
+  const myCaseStudyMode = "light";  // To be modified using CONTEXT
+  const myCaseStudyClassMode = `myCaseStudy myCaseStudy-${myCaseStudyMode}`;
+  const myContraryMode = myCaseStudyMode === "light" ? "dark" : "light";
 
   const { myProjectPath } = useParams();
   const [displayProject, setProjectToDisplay] = useState("")
 
   const findProject = () => {
-    const myProjectSearch = myProjectTab.find((myProject) => myProject.id === myProjectPath.split('-')[1].parseInt());
+    const myProjectSearch = myProjectTab.find((myProject) => myProject.id === myProjectPath.split('-')[1]);
     setProjectToDisplay(myProjectSearch);
   }
 
@@ -22,8 +22,8 @@ function StudyCase() {
 
   if (displayProject !== "") {
     return(
-      <div className={myStudyCaseClassMode}>
-        <h2>{displayProject.name} (ID: {displayProject.id.toString()})</h2>
+      <div className={myCaseStudyClassMode}>
+        <h2>{displayProject.name} (ID: {displayProject.id})</h2>
         <p>{displayProject.customer}</p>
         <p>{displayProject.short_descr}</p>
         <p>{displayProject.long_descr}</p>
@@ -31,7 +31,7 @@ function StudyCase() {
     )
   } else {
     return(
-      <div className={myStudyCaseClassMode}>
+      <div className={myCaseStudyClassMode}>
         <p>
           No project selected (yet ?)
         </p>
@@ -40,4 +40,4 @@ function StudyCase() {
   }
 };
 
-export default StudyCase;
+export default CaseStudy;

@@ -1,20 +1,20 @@
 const myProjectTab = [
   {
-    id: 1,
+    id: "1",
     customer: "Platon",
     name: "Le site web plato... Nique tout !",
     short_descr: "Le challenge",
     long_descr: "A l'époque, Platon a décidé de se lancer malgré une crise économique difficile.\n\nNous avons été derrière eux pour leur apporter le meilleur du web et du digital. Nous sommes vraiment la meilleure agence.",
   },
   {
-    id: 2,
+    id: "2",
     customer: "Solane",
     name: "Le site web qu'est pas aux fraises",
     short_descr: "Solane est aujourd'hui le 1er vendeur de fraises du Poitou-Charentes...",
     long_descr: "... Et c'est un peu grâce à nous ! Dans les moments les meilleurs comme les plus durs, nos campagnes de communication sur la place du marché ont fonctionné à merveille.",
   },
   {
-    id: 3,
+    id: "3",
     customer: "Sedal",
     name: "Notre rente casse-dalle",
     short_descr: "Sedal, l'entreprise qui a commencé tout en bas... Et qui est toujours tout en bas",
