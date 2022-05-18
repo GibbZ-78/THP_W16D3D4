@@ -14,25 +14,25 @@ function Work() {
   const myProjectContainerClassMode = `myProjectContainer myProjectContainer-${myProjectContainerMode}`;
 
   return (
-    <React.Fragment>
     <section className={myWorkClassMode}>
-      <h2>
-        Au fil des années, nous avons pu accompagner les meilleurs.
-      </h2>
-      <p>
-        Découvrez pas à pas comment nous avons été présents et avons procédé pour lancer vos marques préférées.
-        Pour ce faire, parcourez donc les exemples de projets ci-après !
-      </p>
+      <div className={myWorkClassMode}>
+        <h2>
+          Au fil des années, nous avons pu accompagner les meilleurs.
+        </h2>
+        <p>
+          Découvrez pas à pas comment nous avons été présents et avons procédé pour lancer vos marques préférées.
+          Pour ce faire, parcourez donc les exemples de projets ci-après !
+        </p>
+      </div>
+      <div className={myProjectCardContainerClassMode}>
+        {myProjectTab.map(myProject => (
+          <ProjectCard key={myProject.id} project={myProject} />
+        ))}
+      </div>
+      <div className={myProjectContainerClassMode}>
+        Insérer ici du vide ou le détail de l'un des projets sélectionnés, le cas échéant (i.e. composant "StudyCase")
+      </div>
     </section>
-    <section className={myProjectCardContainerClassMode}>
-      {myProjectTab.map(myProject => (
-        <ProjectCard key={myProject.id} project={myProject} />
-      ))}
-    </section>
-    <section className={myProjectContainerClassMode}>
-      Insérer ici du vide ou le détail de l'un des projets sélectionnés, le cas échéant (i.e. composant "StudyCase")
-    </section>
-    </React.Fragment>
   );
 }
 

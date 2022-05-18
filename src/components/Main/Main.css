@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
 }
 
 .myMain-light {
