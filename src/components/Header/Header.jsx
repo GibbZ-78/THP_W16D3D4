@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import SunsetImg from '../../assets/images/sunset.svg';
-import SunriseImg from '../../assets/images/sunrise.svg';
+import MoonImg from '../../assets/images/moon.svg';
+import SunImg from '../../assets/images/sun.svg';
 import './Header.css';
 
 function Header() {
@@ -10,7 +10,7 @@ function Header() {
   const [myContraryMode, setContraryMode] = useState(myHeaderMode === "light" ? "dark" : "light");
   const [myHeaderClassMode, setHeaderClassMode] = useState(`myHeader myHeader-${myHeaderMode}`);
   const [myHeaderModeSwitchButton, setHeaderModeSwitchButton] = useState(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
-  const [myHeaderModeSwitchImage, setHeaderModeSwitchImage] = useState(myHeaderMode === "light" ? SunsetImg : SunriseImg);
+  const [myHeaderModeSwitchImage, setHeaderModeSwitchImage] = useState(myHeaderMode === "light" ? MoonImg : SunImg);
   console.log("Initialized Header state vars...");
   console.log("  > Initial mode :" + myHeaderMode);
   console.log("  > Initial 'contrary' mode :" + myContraryMode);
@@ -21,7 +21,7 @@ function Header() {
     setContraryMode(myHeaderMode === "light" ? "dark" : "light");
     setHeaderClassMode(`myHeader myHeader-${myHeaderMode}`);
     setHeaderModeSwitchButton(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
-    setHeaderModeSwitchImage(myHeaderMode === "light" ? SunsetImg : SunriseImg);
+    setHeaderModeSwitchImage(myHeaderMode === "light" ? MoonImg : SunImg);
     console.log("  > New mode: " + myHeaderMode);
     console.log("  > New 'contrary' mode: " + myContraryMode);
     console.log("  > New header style: " + myHeaderClassMode);
