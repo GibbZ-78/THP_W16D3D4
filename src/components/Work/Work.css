@@ -1,0 +1,24 @@
+.myWork {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.myWork-light {
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+  
+.myWork-light > p {
+    color: rgb(255,0,0);
+}
+
+.myWork-dark {
+  background-color: rgb(0,0,0);
+  color: rgb(255,255,255);
+}
+
+.myWork-dark > p {
+    color: rgb(0,255,0);
+}

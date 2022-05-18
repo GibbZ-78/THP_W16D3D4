@@ -1,0 +1,38 @@
+.myHeader {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.myHeader-light {
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+  
+.myHeader-dark {
+  background-color: rgb(0,0,0);
+  color: rgb(255,255,255);
+}
+
+.myHeaderLogo {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.myHeaderMenu {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.myHeaderLink {
+  text-decoration: none;
+  padding: 10px;
+}
+
+.myHeaderLink:hover {
+  background-color: rgb(50,50,50);
+  text-decoration: double rgb(200,200,200);
+}
