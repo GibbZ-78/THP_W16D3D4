@@ -45,6 +45,8 @@
 }
 
 .myProjectContainer {
+  background-color: rgb(200,200,255);
+  color: rgb(50,50,255);
   display:flex;
   flex-direction: row;
   justify-content: center;

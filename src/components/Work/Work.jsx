@@ -1,13 +1,14 @@
 import React from 'react';
-import myProjectTab from '../../assets/contents/Projects'
+import myProjectTab from '../../assets/contents/Projects';
 import ProjectCard from '../ProjectCard/ProjectCard';
+import StudyCase from '../StudyCase/StudyCase';
 import "./Work.css";
 
 function Work() {
 
   const myWorkMode = "light";  // To be modified using CONTEXT
   const myWorkClassMode = `myWork myWork-${myWorkMode}`;
-  const myContraryMode = myWorkMode.mode === "light" ? "dark" : "light";
+  const myContraryMode = myWorkMode === "light" ? "dark" : "light";
   const myProjectCardContainerMode = "light";  // To be modified using CONTEXT
   const myProjectCardContainerClassMode = `myProjectCardContainer myProjectCardContainer-${myProjectCardContainerMode}`;
   const myProjectContainerMode = "light";  // To be modified using CONTEXT
@@ -30,7 +31,7 @@ function Work() {
         ))}
       </div>
       <div className={myProjectContainerClassMode}>
-        Insérer ici du vide ou le détail de l'un des projets sélectionnés, le cas échéant (i.e. composant "StudyCase")
+        <Route path='/:myProjectPath' element={<StudyCase/>} />
       </div>
     </section>
   );

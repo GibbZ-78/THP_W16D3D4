@@ -1,0 +1,35 @@
+.myStudyCase {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid rgb(100,100,100);
+  border-radius: 5px;
+}
+
+.myStudyCase-light {
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+
+.myStudyCase-light > h2 {
+  color: rgb(255,0,0);
+}
+
+.myStudyCase-light > p {
+  color: rgb(255,100,100);
+}
+
+.myStudyCase-dark {
+  background-color: rgb(0,0,0);
+  color: rgb(255,255,255);
+}
+
+.myStudyCase-dark > h2 {
+    color: rgb(0,255,0);
+}
+
+.myStudyCase-dark > p {
+  color: rgb(100,255,100);
+}

@@ -4,7 +4,7 @@ function About() {
 
   const myAboutMode = "light";  // To be modified using CONTEXT
   const myAboutClassMode = `myAbout myAbout-${myAboutMode}`;
-  const myContraryMode = myAboutMode.mode === "light" ? "dark" : "light";
+  const myContraryMode = myAboutMode === "light" ? "dark" : "light";
 
   return (
     <section className={myAboutClassMode}>

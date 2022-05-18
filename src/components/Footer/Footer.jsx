@@ -4,7 +4,7 @@ function Footer() {
 
   const myFooterMode = "light";  // To be modified using CONTEXT
   const myFooterClassMode = `myFooter myFooter-${myFooterMode}`;
-  const myContraryMode = myFooterMode.mode === "light" ? "dark" : "light";
+  const myContraryMode = myFooterMode === "light" ? "dark" : "light";
 
   return (
     <footer className={myFooterClassMode}>
