@@ -12,8 +12,6 @@ function ProjectCard(props) {
         <h2>{props.project.name}</h2>
         <p>Project ID: {props.project.id}</p>
         <p>Client: {props.project.customer}</p>
-        <p>Project ID: {props.project.id}</p>
-        <p>Project ID: {props.project.id}</p>
       </div>
     );
   } else {

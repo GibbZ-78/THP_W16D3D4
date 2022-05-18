@@ -30,7 +30,7 @@ function Work() {
       ))}
     </section>
     <section className={myProjectContainerClassMode}>
-      Insérer ici du vide ou le détail de l'un des projets sélectionnés, le cas échéant
+      Insérer ici du vide ou le détail de l'un des projets sélectionnés, le cas échéant (i.e. composant "StudyCase")
     </section>
     </React.Fragment>
   );
