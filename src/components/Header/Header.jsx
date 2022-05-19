@@ -1,17 +1,20 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import MoonImg from '../../assets/images/moon.svg';
 import SunImg from '../../assets/images/sun.svg';
+import { ColorModeContext } from '../../contexts/ColorModeContext';
 import './Header.css';
 
 function Header() {
 
-  const [myHeaderMode, setHeaderMode] = useState("light");
-  // const [myContraryMode, setContraryMode] = useState("dark");
+  const [myColorMode, toggleHeaderColorMode] = useContext(ColorModeContext);
+
+  const [myHeaderMode, setHeaderMode] = useState(myColorMode === "light" ? "light" : "dark");
+  const [myContraryMode, setContraryMode] = useState(myHeaderMode === "light" ? "dark" : "light");
   // const [myHeaderClassMode, setHeaderClassMode] = useState(`myHeader myHeader-${myHeaderMode}`);
   // const [myHeaderModeSwitchButton, setHeaderModeSwitchButton] = useState(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
   // const [myHeaderModeSwitchImage, setHeaderModeSwitchImage] = useState(myHeaderMode === "light" ? MoonImg : SunImg);
-  let myContraryMode = myHeaderMode === "light" ? "dark" : "light";
+  // let myContraryMode = myHeaderMode === "light" ? "dark" : "light";
   let myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
   let myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
   let myHeaderModeSwitchImage = myHeaderMode === "light" ? MoonImg : SunImg;
@@ -23,12 +26,13 @@ function Header() {
     console.log("Switch mode button pressed...");
     console.log("  > Current mode: " + myHeaderMode);
     console.log("  > Current 'contrary' mode: " + myContraryMode);
-    setHeaderMode(myHeaderMode === "light" ? "dark" : "light");
-    // setContraryMode(myContraryMode === "light" ? "dark" : "light");
+    toggleHeaderColorMode(myColorMode === "light" ? "dark" : "light")
+    .then(setHeaderMode(myColorMode))
+    .then(setContraryMode(myColorMode === "light" ? "dark" : "light"));
     // setHeaderClassMode(`myHeader myHeader-${myHeaderMode}`);
     // setHeaderModeSwitchButton(`myModeSwitchButton myModeSwitchButton-${myHeaderMode}`);
     // setHeaderModeSwitchImage(myHeaderMode === "light" ? MoonImg : SunImg);
-    myContraryMode = myHeaderMode === "light" ? "dark" : "light";
+    // myContraryMode = myHeaderMode === "light" ? "dark" : "light";
     myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
     myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
     myHeaderModeSwitchImage = myHeaderMode === "light" ? MoonImg : SunImg;
