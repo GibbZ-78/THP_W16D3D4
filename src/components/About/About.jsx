@@ -11,9 +11,9 @@ function About() {
   const myAboutClassMode = `myAbout myAbout-${myAboutMode}`;
 
   // Switching 'About' color mode (dark <=> light)... 
-  const SwitchAboutMode = () => {
+  function SwitchAboutMode() {
     myAboutMode === "light" ? setMyAboutMode("dark") : setMyAboutMode("light");
-  };
+  }
 
   // ... each time the global variable 'colorMode' switches
   useEffect(SwitchAboutMode, [colorMode]);

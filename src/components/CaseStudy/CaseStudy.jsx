@@ -19,7 +19,7 @@ function CaseStudy() {
   console.log(myProjectPath);
 
   // Seeking the project with the ID built in the URI...
-  const FindProject = () => {
+  function FindProject() {
     const myProjectSearch = myProjectTab.find((myProject) => myProject.id === myProjectPath.split('-')[1]);
     setProjectToDisplay(myProjectSearch);
   }
@@ -28,9 +28,9 @@ function CaseStudy() {
   useEffect(FindProject, [myProjectPath]);
 
   // Switching Header color mode (dark <=> light)... 
-  const SwitchHeaderMode = () => {
+  function SwitchHeaderMode() {
     myCaseStudyMode === "light" ? setCaseStudyMode("dark") : setCaseStudyMode("light");
-  };
+  }
 
   // ... each time the global variable 'colorMode' switches
   useEffect(SwitchHeaderMode, [colorMode]);

@@ -1,9 +1,22 @@
+import { useEffect, useState, useContext } from "react";
+import ColorModeContext from '../../contexts/ColorModeContext';
 import "./Home.css";
 
 function Home() {
 
-  const myHomeMode = "light";  // To be modified using CONTEXT
+  console.log("Entering 'Home' component");
+  const {colorMode, toggleGlobalColorMode} = useContext(ColorModeContext);
+  console.log("  > Global var 'colorMode': " + colorMode);
+  const [myHomeMode, setMyHomeMode] = useState(colorMode);
   const myHomeClassMode = `myHome myHome-${myHomeMode}`;
+
+  // Switching 'Home' color mode (dark <=> light)... 
+  function SwitchHomeMode() {
+    myHomeMode === "light" ? setMyHomeMode("dark") : setMyHomeMode("light");
+  }
+
+  // ... each time the global variable 'colorMode' switches
+  useEffect(SwitchHomeMode, [colorMode]);
 
   return (
     <section className={myHomeClassMode}>

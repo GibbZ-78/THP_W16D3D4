@@ -1,4 +1,5 @@
-import React from 'react';
+import { useEffect, useState, useContext } from "react";
+import ColorModeContext from '../../contexts/ColorModeContext';
 import { Routes, Route } from 'react-router-dom';
 import myProjectTab from '../../assets/contents/Projects';
 import ProjectCard from '../ProjectCard/ProjectCard';
@@ -7,14 +8,23 @@ import "./Work.css";
 
 function Work() {
 
-  console.log("Mounting 'Work' component");
-
-  const myWorkMode = "light";  // To be modified using CONTEXT
+  console.log("Entering 'Work' component");
+  const {colorMode, toggleGlobalColorMode} = useContext(ColorModeContext);
+  console.log("  > Global var 'colorMode': " + colorMode);
+  const [myWorkMode, setMyWorkMode] = useState(colorMode);
   const myWorkClassMode = `myWork myWork-${myWorkMode}`;
   const myProjectCardContainerMode = "light";  // To be modified using CONTEXT
   const myProjectCardContainerClassMode = `myProjectCardContainer myProjectCardContainer-${myProjectCardContainerMode}`;
   const myProjectContainerMode = "light";  // To be modified using CONTEXT
   const myProjectContainerClassMode = `myProjectContainer myProjectContainer-${myProjectContainerMode}`;
+
+  // Switching 'Work' color mode (dark <=> light)... 
+  function SwitchWorkMode() {
+    myWorkMode === "light" ? setMyWorkMode("dark") : setMyWorkMode("light");
+  }
+
+  // ... each time the global variable 'colorMode' switches
+  useEffect(SwitchWorkMode, [colorMode]);
 
   return (
     <section className={myWorkClassMode}>

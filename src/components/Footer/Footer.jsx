@@ -9,7 +9,7 @@ import "./Footer.css";
 function Footer() {
 
   console.log("Entering 'Footer' component");
-  const {colorMode, toggleGlobalColorMode} = useContext(ColorModeContext);
+  const {colorMode} = useContext(ColorModeContext);
   console.log("  > Global var 'colorMode': " + colorMode);
   const [myFooterMode, setMyFooterMode] = useState(colorMode);
   const myFooterClassMode = `myFooter myFooter-${myFooterMode}`;
@@ -17,9 +17,9 @@ function Footer() {
   const myLinkedinImg = myFooterMode === "light" ? LinkedinDarkImg : LinkedinLightImg;
 
   // Switching 'Footer' color mode (dark <=> light)... 
-  const SwitchFooterMode = () => {
+  function SwitchFooterMode() {
     myFooterMode === "light" ? setMyFooterMode("dark") : setMyFooterMode("light");
-  };
+  }
 
   // ... each time the global variable 'colorMode' switches
   useEffect(SwitchFooterMode, [colorMode]);
@@ -28,9 +28,11 @@ function Footer() {
     <footer className={myFooterClassMode}>
       <p className='myLeftFooter'>&copy; 2022 - Tous droits réservés à Jean-Baptiste VIDAL (GibbZ) pour THP Developer</p>
       <p className='myRightFooter'>
-        .<img src={myGithubImg} alt='logo Github dark ou light pour lien vers le repo de GibbZ'/>.
-        &nbsp;|&nbsp;
+        .&nbsp;
+        <img src={myGithubImg} alt='logo Github dark ou light pour lien vers le repo de GibbZ'/>
+        &nbsp;.&nbsp;
         <img src={myLinkedinImg} alt='logo Linkedin dark ou light pour lien vers le profil de GibbZ'/>
+        &nbsp;.
       </p>
     </footer>
   );

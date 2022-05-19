@@ -1,10 +1,23 @@
+import { useEffect, useState, useContext } from "react";
+import ColorModeContext from '../../contexts/ColorModeContext';
 import { Link } from 'react-router-dom';
 import "./ProjectCard.css";
 
 function ProjectCard(props) {
 
-  const myProjectCardMode = "light";  // To be modified using CONTEXT
+  console.log("Entering 'ProjectCard' component");
+  const {colorMode, toggleGlobalColorMode} = useContext(ColorModeContext);
+  console.log("  > Global var 'colorMode': " + colorMode);
+  const [myProjectCardMode, setMyProjectCardMode] = useState(colorMode);
   const myProjectCardClassMode = `myProjectCard myProjectCard-${myProjectCardMode}`;
+
+  // Switching 'ProjectCard' color mode (dark <=> light)... 
+  function SwitchProjectCardMode() {
+    myProjectCardMode === "light" ? setMyProjectCardMode("dark") : setMyProjectCardMode("light");
+  }
+
+  // ... each time the global variable 'colorMode' switches
+  useEffect(SwitchProjectCardMode, [colorMode]);
 
   if (props.project) {
     return (

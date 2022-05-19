@@ -39,9 +39,9 @@ function Header() {
   }
 
   // Switching 'Header' color mode (dark <=> light)... 
-  const SwitchHeaderMode = () => {
+  function SwitchHeaderMode() {
     myHeaderMode === "light" ? setHeaderMode("dark") : setHeaderMode("light");
-  };
+  }
 
   // ... each time the global variable 'colorMode' switches (because color mode button is pressed, BTW ;-)
   useEffect(SwitchHeaderMode, [colorMode]);
