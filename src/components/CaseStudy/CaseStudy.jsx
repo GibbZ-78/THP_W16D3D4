@@ -8,11 +8,8 @@ import './CaseStudy.css';
 function CaseStudy() {
 
   console.log("Entering 'CaseStudy' component");
-
   const {colorMode, toggleGlobalColorMode} = useContext(ColorModeContext);
-
   console.log("  > Global var 'colorMode': " + colorMode);
-
   const [myCaseStudyMode, setCaseStudyMode] = useState(colorMode);
   const myCaseStudyClassMode = `myCaseStudy myCaseStudy-${myCaseStudyMode}`;
 
@@ -22,16 +19,21 @@ function CaseStudy() {
   console.log(myProjectPath);
 
   // Seeking the project with the ID built in the URI...
-  const findProject = () => {
+  const FindProject = () => {
     const myProjectSearch = myProjectTab.find((myProject) => myProject.id === myProjectPath.split('-')[1]);
     setProjectToDisplay(myProjectSearch);
   }
 
   // ... each time the path to project changes (while component is rendered / updated or not ~ Manages "side-effects")
-  useEffect(findProject, [myProjectPath]);
+  useEffect(FindProject, [myProjectPath]);
 
-  // Infinite loop inside ;-)
-  // useEffect(setCaseStudyMode(colorMode), [colorMode]);
+  // Switching Header color mode (dark <=> light)... 
+  const SwitchHeaderMode = () => {
+    myCaseStudyMode === "light" ? setCaseStudyMode("dark") : setCaseStudyMode("light");
+  };
+
+  // ... each time the global variable 'colorMode' switches
+  useEffect(SwitchHeaderMode, [colorMode]);
 
   // If the 'displayProject' state var is not 'undefined' (i.e. not just initialized via 'useState' or inducing a vain search via 'find')
   // Then display the content of the related project information within 'CaseStudy', the lowest component in the 'Work' page

@@ -9,12 +9,12 @@
 
 .myHeader-light {
   background-color: rgb(200,200,200);
-  color: rgb(50,50,50);
+  color: rgb(50, 50, 50);
 }
   
 .myHeader-dark {
   background-color: rgb(50,50,50);
-  color: rgb(200,200,200);
+  color: rgb(200, 200, 200);
 }
 
 .myHeaderLogo {
@@ -22,6 +22,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.myHeaderLogoText {
   font-size: larger;
   font-weight: bolder;
   text-decoration: none;

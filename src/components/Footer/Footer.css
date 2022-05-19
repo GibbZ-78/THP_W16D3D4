@@ -1,7 +1,7 @@
 .myFooter {
   display:flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   min-height: 10vh;
   width: 100%;
@@ -12,15 +12,22 @@
   color: rgb(50,50,50);
 }
   
-.myFooter-light > p {
-    color: rgb(255,0,0);
-}
-
 .myFooter-dark {
   background-color: rgb(50,50,50);
   color: rgb(200,200,200);
 }
 
-.myFooter-dark > p {
-    color: rgb(0,255,0);
+.myLeftFooter {
+  margin-left: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: smaller;
+}
+
+.myRightFooter {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
 }

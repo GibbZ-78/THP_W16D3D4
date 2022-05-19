@@ -1,10 +1,22 @@
+import { useEffect, useState, useContext } from "react";
+import ColorModeContext from '../../contexts/ColorModeContext';
 import "./About.css";
 
 function About() {
 
-  const myAboutMode = "light";  // To be modified using CONTEXT
+  console.log("Entering 'About' component");
+  const {colorMode, toggleGlobalColorMode} = useContext(ColorModeContext);
+  console.log("  > Global var 'colorMode': " + colorMode);
+  const [myAboutMode, setMyAboutMode] = useState(colorMode);
   const myAboutClassMode = `myAbout myAbout-${myAboutMode}`;
-  const myContraryMode = myAboutMode === "light" ? "dark" : "light";
+
+  // Switching 'About' color mode (dark <=> light)... 
+  const SwitchAboutMode = () => {
+    myAboutMode === "light" ? setMyAboutMode("dark") : setMyAboutMode("light");
+  };
+
+  // ... each time the global variable 'colorMode' switches
+  useEffect(SwitchAboutMode, [colorMode]);
 
   return (
     <section className={myAboutClassMode}>

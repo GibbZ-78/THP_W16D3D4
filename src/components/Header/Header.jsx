@@ -10,58 +10,49 @@ import './Header.css';
 function Header() {
 
   console.log("Entering 'Header' component");
-
   const {colorMode, toggleGlobalColorMode} = useContext(ColorModeContext);
-
   console.log("  > Global var 'colorMode': " + colorMode);
-
   const [myHeaderMode, setHeaderMode] = useState(colorMode);
   
-  let myContraryMode;
-  let myHeaderClassMode;
-  let myHeaderModeSwitchButton;
-  let myHeaderModeSwitchImage;
-  let myBuildingImg;
-  
-  function InitMode() {
-    myContraryMode = myHeaderMode === "light" ? "dark" : "light";
-    myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
-    myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
-    myHeaderModeSwitchImage = myHeaderMode === "light" ? MoonImg : SunImg;
-    myBuildingImg = myHeaderMode === "light" ? BuildingImgDark : BuildingImgLight;
-    console.log("  > Initializing Header state vars...");
-    console.log("    - Initial mode: " + myHeaderMode);
-    console.log("    - Initial 'contrary' mode: " + myContraryMode);
-  }
+  const myContraryMode = myHeaderMode === "light" ? "dark" : "light";
+  const myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
+  const myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
+  const myHeaderModeSwitchImage = myHeaderMode === "light" ? MoonImg : SunImg;
+  const myBuildingImg = myHeaderMode === "light" ? BuildingImgDark : BuildingImgLight;
 
-  function SwitchMode() {
+  function SwitchGlobalMode() {
     toggleGlobalColorMode(colorMode === "light" ? "dark" : "light");
-    console.log("  > Switching mode button pressed...");
-    console.log("    - Current mode: " + myHeaderMode);
-    console.log("    - Current 'contrary' mode: " + myContraryMode);
-    setHeaderMode(colorMode);
-    myContraryMode = myHeaderMode === "light" ? "dark" : "light";
-    myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
-    myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
-    myHeaderModeSwitchImage = myHeaderMode === "light" ? MoonImg : SunImg;
-    myBuildingImg = myHeaderMode === "light" ? BuildingImgDark : BuildingImgLight;
-    console.log("    - New mode: " + myHeaderMode);
-    console.log("    - New 'contrary' mode: " + myContraryMode);
-    console.log("    - New header style: " + myHeaderClassMode);
-    console.log("    - New button style: " + myHeaderModeSwitchButton);
-    console.log("    - New button icon: " + myHeaderModeSwitchImage)
+    // console.log("  > Switching mode button pressed...");
+    // console.log("    - Current mode: " + myHeaderMode);
+    // console.log("    - Current 'contrary' mode: " + myContraryMode);
+    // setHeaderMode(colorMode);
+    // myContraryMode = myHeaderMode === "light" ? "dark" : "light";
+    // myHeaderClassMode = `myHeader myHeader-${myHeaderMode}`;
+    // myHeaderModeSwitchButton = `myModeSwitchButton myModeSwitchButton-${myHeaderMode}`;
+    // myHeaderModeSwitchImage = myHeaderMode === "light" ? MoonImg : SunImg;
+    // myBuildingImg = myHeaderMode === "light" ? BuildingImgDark : BuildingImgLight;
+    // console.log("    - New mode: " + myHeaderMode);
+    // console.log("    - New 'contrary' mode: " + myContraryMode);
+    // console.log("    - New header style: " + myHeaderClassMode);
+    // console.log("    - New button style: " + myHeaderModeSwitchButton);
+    // console.log("    - New button icon: " + myHeaderModeSwitchImage)
   }
 
-  // Infinite loops inside ;-)
-  // useEffect(SwitchMode, [myHeaderMode]);
-  // useEffect(SwitchMode, [myColorMode]);
-  
-  InitMode();
+  // Switching 'Header' color mode (dark <=> light)... 
+  const SwitchHeaderMode = () => {
+    myHeaderMode === "light" ? setHeaderMode("dark") : setHeaderMode("light");
+  };
+
+  // ... each time the global variable 'colorMode' switches (because color mode button is pressed, BTW ;-)
+  useEffect(SwitchHeaderMode, [colorMode]);
 
   return (
     <header className={myHeaderClassMode}>
       <div className='myHeaderLogo'>
-        <Link to='/'><img src={myBuildingImg} alt='icon of a building'/> REACT ESTATE</Link>
+        <Link className='myHeaderLogoText' to='/'>
+          <img src={myBuildingImg} alt='Building - part of REACT ESTATE logo'/> 
+          REACT ESTATE
+        </Link>
       </div>
       <div className="myHeaderMenu">
         <Link className='myHeaderLink' to='/'>Accueil</Link>
@@ -69,12 +60,8 @@ function Header() {
         <Link className='myHeaderLink' to='/works'>Nos projets</Link>
       </div>
       <div>
-        <button className={myHeaderModeSwitchButton} onClick={SwitchMode}>
+        <button className={myHeaderModeSwitchButton} onClick={SwitchGlobalMode}>
           <img src={myHeaderModeSwitchImage} alt={`icon figuring the alternate color mode: ${myContraryMode}`} />
-          {/*
-          &nbsp;Switch to {myContraryMode} mode&nbsp;
-          <img src={myHeaderModeSwitchImage} alt={`icon figuring the alternate color mode: ${myContraryMode}`} />
-          */}
         </button>
       </div> 
     </header>

@@ -8,6 +8,7 @@
 .myAbout-light {
   background-color: rgb(255,255,255);
   color: rgb(0,0,0);
+  margin: 5px 10px 5px 10px;
 }
   
 .myAbout-light > p {
@@ -17,6 +18,7 @@
 .myAbout-dark {
   background-color: rgb(0,0,0);
   color: rgb(255,255,255);
+  margin: 5px 10px 5px 10px;
 }
 
 .myAbout-dark > p {
