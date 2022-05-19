@@ -1,4 +1,4 @@
-import ColorModeContextProvider from './contexts/ColorModeContext';
+import ColorModeContextProvider from './contexts/ColorModeContextProvider';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
