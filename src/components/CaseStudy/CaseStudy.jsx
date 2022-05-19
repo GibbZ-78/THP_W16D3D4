@@ -1,18 +1,24 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import ColorModeContext from '../../contexts/ColorModeContext';
 import myProjectTab from '../../assets/contents/Projects';
 import './CaseStudy.css';
 
 function CaseStudy() {
 
-  const myCaseStudyMode = "dark";  // To be modified using CONTEXT
+  console.log("Entering 'CaseStudy' component");
+
+  const {colorMode, toggleGlobalColorMode} = useContext(ColorModeContext);
+
+  console.log("  > Global var 'colorMode': " + colorMode);
+
+  const [myCaseStudyMode, setCaseStudyMode] = useState(colorMode);
   const myCaseStudyClassMode = `myCaseStudy myCaseStudy-${myCaseStudyMode}`;
 
   const { myProjectPath } = useParams();
   const [displayProject, setProjectToDisplay] = useState(undefined)
-
-  console.log("Mounting 'CaseStudy' component");
+  
   console.log(myProjectPath);
 
   // Seeking the project with the ID built in the URI...
@@ -21,8 +27,11 @@ function CaseStudy() {
     setProjectToDisplay(myProjectSearch);
   }
 
-  // ... each time the CaseStudy component is rendered / updated
+  // ... each time the path to project changes (while component is rendered / updated or not ~ Manages "side-effects")
   useEffect(findProject, [myProjectPath]);
+
+  // Infinite loop inside ;-)
+  // useEffect(setCaseStudyMode(colorMode), [colorMode]);
 
   // If the 'displayProject' state var is not 'undefined' (i.e. not just initialized via 'useState' or inducing a vain search via 'find')
   // Then display the content of the related project information within 'CaseStudy', the lowest component in the 'Work' page
